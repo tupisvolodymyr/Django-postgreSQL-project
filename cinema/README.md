@@ -1,52 +1,76 @@
-Cinema Project (Django ORM + PostgreSQL)
+# Cinema Django Project 🎬
 
-Навчальний проект для відпрацювання навичок роботи з Django ORM та базою даних PostgreSQL.
+Навчальний проект на Django для керування базою даних фільмів, жанрів та режисерів. Проект демонструє роботу з Django ORM та інтеграцію з PostgreSQL.
 
-Технічні характеристики
+## 🚀 Як запустити проект локально
 
-Python: 3.14
+Дотримуйтесь цих кроків, щоб налаштувати проект на своєму комп'ютері.
 
-Django: 5.0+
+### 1. Клонування репозиторію
+```bash
+git clone [https://github.com/ohnista-lks07/cinema_django.git](https://github.com/ohnista-lks07/cinema_django.git)
+cd cinema_django
+```
 
-База даних: PostgreSQL
+ 
+ ### 2. Створення та активація віртуального середовища
+```bash
+python -m venv .venv
+# Для Windows:
+.venv\Scripts\activate
+# Для macOS/Linux:
+source .venv/bin/activate
+```
 
-Основні бібліотеки: psycopg2-binary, python-dotenv
+### 3. Встановлення залежностей
+```Bash
+pip install -r requirements.txt
+```
 
-Опис моделей:
-Проект містить наступні сутності:
+_Якщо файлу requirements.txt немає, встановіть вручну: pip install django psycopg2-binary python-dotenv)_
 
-Genre: Назва жанру (Drama, Sci-Fi тощо).
+### 4. Налаштування змінних оточення (.env)
 
-Director: Інформація про режисера (ім'я, прізвище, країна).
+```bash
+Створіть файл .env у корені проекту (поруч із manage.py) та додайте туди ваші дані:
 
-Movie: Основна інформація про фільм (назва, рік, рейтинг, тривалість).
-
-Review: Користувацькі відгуки з оцінкою.
-
-Як запустити проект:
-Клонуйте репозиторій.
-Встановіть залежності:
-
-pip install django psycopg2-binary python-dotenv
-
-
-Налаштуйте середовище:
-Створіть файл .env у корені проекту та додайте ваші дані PostgreSQL:
+Фрагмент коду
+SECRET_KEY=ваш_секретний_ключ
+DEBUG=True
 
 DB_NAME=cinema_db
 DB_USER=postgres
-DB_PASSWORD=ваш_пароль
+DB_PASSWORD=ваш_пароль_від_postgres
 DB_HOST=localhost
 DB_PORT=5432
-SECRET_KEY=ваш_ключ_з_settings
+```
 
-
-Запустіть міграції:
-
+### 5. Запуск міграцій та бази даних
+Переконайтеся, що PostgreSQL запущено і база даних cinema_db створена. Виконайте команди:
+```Bash
+python manage.py makemigrations
 python manage.py migrate
+```
 
+### 6. Запуск сервера
+```Bash
+python manage.py runserver
+```
 
-Запуск запитів:
-Виконайте файл зі сценаріями:
+# 🛠 Технології
+ _Python 3.14_
 
-python queries.py
+ _Django 6.0.3_
+
+ _PostgreSQL_
+
+_python-dotenv (для безпечного зберігання паролів)_
+
+# 📂 Опис моделей
+_Genre — жанри фільмів із сортуванням за назвою._
+
+_Director — інформація про режисерів (ім'я, країна, рік народження)._
+
+_Movie — дані про фільм (рейтинг, тривалість, зв'язок з режисером)._
+
+_Review — відгуки користувачів з валідацією оцінки від 1 до 10._
