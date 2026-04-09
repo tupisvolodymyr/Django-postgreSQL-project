@@ -79,7 +79,7 @@ except Movie.DoesNotExist:
 print("\n--- Найкращий режисер за середнім рейтингом ---")
 best_director = Director.objects.annotate(avg=Avg("movie__rating")).order_by("-avg").first()
 if best_director:
-    print(f"Найкращий режисер: {best_director.first_name} {best_director.last_name} (Рейтинг: {best_director.avg})")
+    print(f"Найкращий режисер: {best_director.first_name} {best_director.last_name} (Рейтинг: {best_director.avg})") 
 
 print("\n--- Власний запит ---")
 #Тут я хочу вивести кількість фільмів тривалість яких більше за 150 хв
