@@ -8,7 +8,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
+ 
 
 SECRET_KEY = 'django-insecure-vwajkh_1ope0zw2&7!an%4k4o*_r^+=ywaod+hhu)&oug_aad%'
 
