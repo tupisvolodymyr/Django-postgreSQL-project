@@ -57,4 +57,4 @@ class Review(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Відгук на {self.movie.title} — {self.score}/10'
+        return f'Відгук на {self.movie.title} — {self.score}/10' 
