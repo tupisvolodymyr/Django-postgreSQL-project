@@ -8,8 +8,7 @@
 
 ### 1. Клонування репозиторію
 ```bash
-git clone [https://github.com/ohnista-lks07/cinema_django.git](https://github.com/ohnista-lks07/cinema_django.git)
-cd cinema_django
+https://github.com/tupisvolodymyr/Django-postgreSQL-project.git
 ```
 
  
